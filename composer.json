@@ -1,0 +1,25 @@
+{
+  "name": "balambasik/deviceinfo",
+  "type": "library",
+  "keywords": ["device type", "device os", "device browser"],
+  "description": "A lightweight library for defining basic device data.\nDetection will be performed based on UserAgent and IP address.\nAllows you to determine: device type, operating system, browser, country.",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0.0",
+    "jaybizzle/crawler-detect": "1.*",
+    "mobiledetect/mobiledetectlib": "^2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Balambasik\\DeviceInfo\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Balambasik\\DeviceInfo\\Composer::installSxDatabase"
+    ],
+    "post-update-cmd": [
+      "Balambasik\\DeviceInfo\\Composer::installSxDatabase"
+    ]
+  }
+}
